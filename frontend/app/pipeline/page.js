@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import SchemeDocumentUpload from "./SchemeDocumentUpload";
 
 const API = "http://127.0.0.1:8000";
 
@@ -177,6 +178,10 @@ export default function PipelinePage() {
                         <div className="input-group" style={{ marginBottom: 16 }}>
                             <label>Documents (comma-separated)</label>
                             <input className="input" value={formData.documents} onChange={(e) => updateField("documents", e.target.value)} />
+                            <SchemeDocumentUpload
+                                schemeId={formData.scheme_id}
+                                onDocumentsChange={(docs) => updateField("documents", docs.join(","))}
+                            />
                         </div>
 
                         <button className="btn btn-primary btn-lg" onClick={runPipeline} disabled={loading} style={{ width: "100%" }}>
