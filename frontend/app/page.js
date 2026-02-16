@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -21,12 +22,12 @@ export default function Home() {
         </p>
 
         <div className="hero-actions animate-fade-in-up delay-3">
-          <a href="/pipeline" className="btn btn-primary btn-lg">
+          <Link href="/pipeline" className="btn btn-primary btn-lg">
             🚀 Run AI Pipeline
-          </a>
-          <a href="/discover" className="btn btn-secondary btn-lg">
+          </Link>
+          <Link href="/discover" className="btn btn-secondary btn-lg">
             🔍 Discover Schemes
-          </a>
+          </Link>
         </div>
 
         <div className="stats-grid animate-fade-in-up delay-4">
@@ -205,9 +206,9 @@ export default function Home() {
             Run the full AI pipeline now — profile extraction, scheme discovery,
             document validation, risk analysis, and automated submission in one go.
           </p>
-          <a href="/pipeline" className="btn btn-primary btn-lg">
+          <Link href="/pipeline" className="btn btn-primary btn-lg">
             🚀 Start Pipeline
-          </a>
+          </Link>
         </div>
       </section>
     </main>
