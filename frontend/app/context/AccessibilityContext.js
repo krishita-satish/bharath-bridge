@@ -26,6 +26,12 @@ export function AccessibilityProvider({ children }) {
     const [isReading, setIsReading] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
 
+    // Modal State
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const openModal = () => setIsModalOpen(true);
+    const closeModal = () => setIsModalOpen(false);
+    const toggleModal = () => setIsModalOpen((prev) => !prev);
+
     const pathname = usePathname();
     const utteranceRef = useRef(null);
 
@@ -199,7 +205,9 @@ export function AccessibilityProvider({ children }) {
 
                 screenReaderMode, setScreenReaderMode,
                 isReading, isPaused,
-                readPageContent, stopReading, pauseReading, resumeReading
+                readPageContent, stopReading, pauseReading, resumeReading,
+
+                isModalOpen, openModal, closeModal, toggleModal
             }}
         >
             {children}

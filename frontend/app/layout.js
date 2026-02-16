@@ -8,6 +8,8 @@ export const metadata = {
 
 import { AccessibilityProvider } from "./context/AccessibilityContext";
 import Link from "next/link";
+import NavAccessibilityButton from "./components/NavAccessibilityButton";
+import AccessibilityModal from "./components/AccessibilityModal";
 
 export default function RootLayout({ children }) {
   return (
@@ -24,12 +26,13 @@ export default function RootLayout({ children }) {
                 <Link href="/discover" className="nav-link">Discover</Link>
                 <Link href="/pipeline" className="nav-link">Pipeline</Link>
                 <Link href="/tracking" className="nav-link">Tracking</Link>
-                <Link href="/accessibility" className="nav-link">Accessibility</Link>
+                <NavAccessibilityButton />
                 <Link href="/settings" className="nav-link">Settings</Link>
               </div>
             </div>
           </nav>
           {children}
+          <AccessibilityModal />
         </AccessibilityProvider>
       </body>
     </html>
